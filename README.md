@@ -1,4 +1,4 @@
-# Spam Cleanup for cal.nashvl.org
+# Spam Cleanup for [Nashville's Technology Calendar](http://cal.nashvl.org)
 
 cal.nashvl.org is based on [calagator](https://github.com/calagator/calagator)
 
