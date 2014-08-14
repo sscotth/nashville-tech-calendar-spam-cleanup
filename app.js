@@ -13,11 +13,11 @@
                    'north face'            ,
                    'そこである'],
 
-      url      = 'http://cal.nashvl.org/events?utf8=%E2%9C%93&date%5Bstart%5D=2000-01-01&date%5Bend%5D=2099-12-31&commit=Filter',
+      URL      = 'http://cal.nashvl.org/events?utf8=%E2%9C%93&date%5Bstart%5D=2000-01-01&date%5Bend%5D=2099-12-31&commit=Filter',
 
       links    = [];
 
-  casper.start(url);
+  casper.start(URL);
   casper.viewport(1280, 720);
 
   // Grab all cal.nashvl.org links that contain any KEYWORD
