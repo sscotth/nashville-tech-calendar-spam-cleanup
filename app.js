@@ -11,6 +11,10 @@
                    'Ralph Lauren'          ,
                    'University or college' ,
                    'north face'            ,
+                   'Vuitton'               ,
+                   'designer bags'         ,
+                   'well luxury'           ,
+                   'true were beyond'      ,
                    'そこである'],
 
       URL      = 'http://cal.nashvl.org/events?utf8=%E2%9C%93&date%5Bstart%5D=2000-01-01&date%5Bend%5D=2099-12-31&commit=Filter',
