@@ -1,4 +1,4 @@
-;(function () {
+;(function(){
   'use strict';
 
   var casper   = require('casper').create(),
@@ -11,7 +11,7 @@
                    'Ralph Lauren'          ,
                    'University or college' ,
                    'north face'            ,
-                   'そこである' ],
+                   'そこである'],
 
       url      = 'http://cal.nashvl.org/events?utf8=%E2%9C%93&date%5Bstart%5D=2000-01-01&date%5Bend%5D=2099-12-31&commit=Filter',
 
@@ -20,8 +20,8 @@
   casper.start(url);
   casper.viewport(1280, 720);
 
-  //Grab all cal.nashvl.org links that contain any KEYWORD
-  casper.eachThen(KEYWORDS, function (response) {
+  // Grab all cal.nashvl.org links that contain any KEYWORD
+  casper.eachThen(KEYWORDS, function(response){
     var xpath = "//a[contains(text(),'" +
                   response.data +
                   "') and contains(@href,'cal.nashvl.org')]",
@@ -31,23 +31,23 @@
     links.push(this.getElementsAttribute(nodes, 'href'));
   });
 
-  //Then Flatten the links array
-  casper.then(function () {
-    links = links.reduce(function (a, b) {
+  // Then Flatten the links array
+  casper.then(function(){
+    links = links.reduce(function(a, b){
       return a.concat(b);
     });
   });
 
-  //Then Submit a DELETE request to the url
-  casper.then(function () {
-    casper.eachThen(links, function (response) {
-      this.thenOpen(response.data, {method: 'delete'}, function () {
+  // Then Submit a DELETE request to the url
+  casper.then(function(){
+    casper.eachThen(links, function(response){
+      this.thenOpen(response.data, {method: 'delete'}, function(){
         this.echo('delete: ' + response.data);
       });
     });
   });
 
-  casper.run(function () {
+  casper.run(function(){
     this.exit();
   });
 
